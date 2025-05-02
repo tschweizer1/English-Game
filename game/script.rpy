@@ -72,6 +72,18 @@ label start:
     player "{i}Slept in again... you think I would've learned after being late so many times already.{/i}"
 
     player "{i}Oh well, guess I better get ready and go{/i}"
+
+    scene black
+    with fade
+
+    play audio "Morning.ogg"
+
+    pause(12)
+
+    scene schoolFront
+    with dissolve
+
+    player "{i}Insert school name High… it’s your perfectly average Japanese high school. Almost too average. {/i}"
     
     # This ends the game.
 
