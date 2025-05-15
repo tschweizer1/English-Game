@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -12,6 +12,21 @@ define commentary = Character("")
 define player = Character("[playerName]")
 
 define mom = Character("Mom")
+
+define tadashi = Character("Tadashi")
+
+define yuka = Character("Yuka")
+
+define teacher = Character("Teacher")
+
+define studentA = Character("Student A")
+
+define studentB = Character("Student B")
+
+
+
+transform large: 
+    zoom 1.25 #adjust as required
 
 
 # The game starts here.
@@ -79,12 +94,184 @@ label start:
     play audio "Morning.ogg"
 
     pause(12)
-
-    scene schoolFront
+    
+    scene school at large
     with dissolve
 
     player "{i}Insert school name High… it’s your perfectly average Japanese high school. Almost too average. {/i}"
     
+    player "{i}I’ve been here for a while, and nothing exciting has ever happened. Every day has consisted of waking up, going to school, going home, and going to bed. It’s like a damn time loop!{/i}"
+            
+    player "{i}But that’s life I guess. It’s my own fault for looking for some excitement from some normal high school. Hopefully once I graduate, things will change.{/i}"
+
+    play audio "footsteps.ogg"
+    
+    scene hallway
+    with dissolve
+
+    pause(2)
+
+    scene classroom
+    with dissolve
+
+    show tadashi smile
+    with dissolve
+
+    tadashi "Yo! [playerName]!"
+
+    show tadashi idle
+    with dissolve
+
+    player "{i}My best friend Tadashi, he has been with me since grade school. He can be an idiot sometimes, but you can’t find someone more loyal than him.{/i}"
+
+    show tadashi smile
+    with dissolve
+
+    tadashi "You're cutting it pretty close. Sleep in again?"
+
+    player "Yeah yeah, cut me some slack. I was up all night studying for today’s test…"
+
+    show tadashi worry
+    with dissolve
+
+    tadashi "Wait- we have a test today"
+
+    player "..."
+
+    player "{i}Like i said... an idiot"
+
+    player "Alright, we got a few minutes before class… I’ll help you cram-study."
+
+    show tadashi smile
+    with dissolve
+
+    tadashi "You're the best!"
+
+    show black
+    with fade
+
+    pause (0.5)
+
+    show hallway
+    with dissolve
+
+    player "{i}That test was a lot easier than I thought. Maybe studying with Tadashi helped me out a bit too…{/i}"
+
+    player "Anyway, I need to head to my next class-"
+
+    player "Oof!"
+
+    show yuka worry
+    with dissolve
+
+    yuka "Ah!"
+
+    yuka "Oh! [playerName]! I'm so sorry! Are you okay?"
+
+    player "Oh... Yuka."
+
+    player "{i}Crap… of course I end up bumping into the most beautiful girl at our school!{/i}"
+
+    player "{i}If her armada of fans were here… they’d jump me for potentially hurting their muse…{/i}"
+
+    player "{i}But I can’t blame them, she really is pretty…{/i}"
+
+    yuka "[playerName]?"
+
+    player "Oh! Sorry- yeah I’m- I’m fine…"
+
+    show yuka happy
+    with dissolve
+
+    yuka "I see. That's a relief."
+
+    yuka "So how did your test go today?"
+
+    player "Huh? How did you know about my test?"
+
+    yuka "I have the same test tomorrow. They always have your class take it the day before ours."
+
+    player "Oh really? I had no idea."
+
+    yuka "Yup. I was actually hoping you’d help me study today after school… at my place."
+
+    yuka "..."
+
+    player "{i}Huh?{/i}"
+
+    player "{i}Wait a minute. Yuka isn’t only popular for our looks. She’s also the smartest girl in our grade.{/i}"
+
+    player "{i}Does she really need help studying?{/i}"
+
+    player "{i}Or…{/i}"
+
+    player "{i}Is she… flirting with me?!{/i}"
+
+    menu:
+        "What should I do?"
+
+        "Accept Yuka's invite":
+            $ acceptedInvite = True
+
+            player "Sure! Though I don’t know how much help I’ll be…"
+
+            yuka "Thank you, [playerName]! Then I’ll be waiting for you at the gate after school."
+
+            hide yuka happy
+            with fade
+
+            player "{i}Alright [playerName], calm down. You’re just helping her study. That’s it. Nothing more.{/i}"
+
+            player "{i}…Right?{/i}"
+
+            player "{i}Whatever, I can worry about that later. I have to get to class.{/i}"
+
+
+        "Turn her down":
+            $ acceptedInvite = False
+
+            player "{i}No, I must be mistaken. There’s no way she’d be interested in me.{/i}"
+
+            player "Sorry Yuka, I don’t think I’d be much help. Maybe you should ask someone else."
+
+            show yuka worry
+            with dissolve
+
+            yuka "Oh… I see. I’m sorry for asking."
+
+            player "No it’s-"
+
+            hide yuka worry
+            with fade
+
+            player "{i}Crap... did I upset her?{/i}"
+    
+    player "{i}Whatever, I can worry about that later. I have to get to class{/i}"
+
+    show black
+    with fade
+
+    pause(0.5)
+
+    show classroom
+    with dissolve
+
+    teacher "And for today’s cleaning duty we’ll have Mikoto and… [playerName]"
+
+    studentA "Uh oh, getting paired up with Mikoto?"
+
+    studentB "Ugh, for real, I got paired with him last time. He didn’t even show up! I had to do all the cleaning myself."
+
+    player "{i}Just my luck… looks like I’ll be staying late…{/i}"
+
+    if(acceptedInvite):
+        player"{i}Hopefully I can still make it in time to study with Yuka{/i}"
+
+    show black
+    with fade
+
+    
+
     # This ends the game.
 
     return
