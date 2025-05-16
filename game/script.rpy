@@ -25,10 +25,17 @@ define studentB = Character("Student B")
 
 define anon = Character("???")
 
+transform small:
+    zoom 1.25
 
+transform middle:
+    zoom 1.5
 
 transform large: 
-    zoom 1.25 #adjust as required
+    zoom 3.75 #adjust as required
+
+transform largest:
+    zoom 2.5
 
 
 # The game starts here.
@@ -77,7 +84,7 @@ label start:
 
     play audio "alarm.ogg"
 
-    scene bedroom
+    scene bedroom at large
     with dissolve
 
     mom  "[playerName]! Wake up! You're going to be late!"
@@ -108,12 +115,12 @@ label start:
 
     play audio "footsteps.ogg"
     
-    scene hallway
+    scene hallway at small
     with dissolve
 
     pause(2)
 
-    scene classroom
+    scene classroom at small
     with dissolve
 
     show tadashi smile
@@ -122,19 +129,16 @@ label start:
     tadashi "Yo! [playerName]!"
 
     show tadashi idle
-    with dissolve
 
     player "{i}My best friend Tadashi, he has been with me since grade school. He can be an idiot sometimes, but you can’t find someone more loyal than him.{/i}"
 
     show tadashi smile
-    with dissolve
 
     tadashi "You're cutting it pretty close. Sleep in again?"
 
     player "Yeah yeah, cut me some slack. I was up all night studying for today’s test..."
 
     show tadashi worry
-    with dissolve
 
     tadashi "Wait- we have a test today"
 
@@ -145,7 +149,6 @@ label start:
     player "Alright, we got a few minutes before class... I’ll help you cram-study."
 
     show tadashi smile
-    with dissolve
 
     tadashi "You're the best!"
 
@@ -154,7 +157,7 @@ label start:
 
     pause (0.5)
 
-    show hallway
+    scene hallway at small
     with dissolve
 
     player "{i}That test was a lot easier than I thought. Maybe studying with Tadashi helped me out a bit too...{/i}"
@@ -183,7 +186,6 @@ label start:
     player "Oh! Sorry- yeah I’m- I’m fine..."
 
     show yuka happy
-    with dissolve
 
     yuka "I see. That's a relief."
 
@@ -226,8 +228,6 @@ label start:
 
             player "{i}...Right?{/i}"
 
-            player "{i}Whatever, I can worry about that later. I have to get to class.{/i}"
-
 
         "Turn her down":
             $ acceptedInvite = False
@@ -237,7 +237,6 @@ label start:
             player "Sorry Yuka, I don’t think I’d be much help. Maybe you should ask someone else."
 
             show yuka worry
-            with dissolve
 
             yuka "Oh... I see. I’m sorry for asking."
 
@@ -248,15 +247,10 @@ label start:
 
             player "{i}Crap... did I upset her?{/i}"
     
-    player "{i}Whatever, I can worry about that later. I have to get to class{/i}"
+    player "{i}Whatever, I can worry about that later. I have to get to class.{/i}"
 
-    show black
+    scene classroom at small
     with fade
-
-    pause(0.5)
-
-    show classroom
-    with dissolve
 
     teacher "And for today’s cleaning duty we’ll have Mikoto and... [playerName]"
 
@@ -269,13 +263,10 @@ label start:
     if(acceptedInvite):
         player"{i}Hopefully I can still make it in time to study with Yuka{/i}"
 
-    show black
-    with fade
-
     # sounds needed here
     
-    show classroom
-    with dissolve
+    scene classroom night at small
+    with fade
 
     player "{i}He really didn’t show up. I had to do the cleaning all by myself.{/i}"
     
@@ -285,11 +276,8 @@ label start:
 
     # needs more sounds :D
 
-    show black
+    scene hallway night at small
     with fade
-
-    show hallway
-    with dissolve
 
     player "{i}I never realized how creepy school can be when it’s late. I can practically hear my own heartbeat.{/i}"
 
@@ -297,12 +285,15 @@ label start:
 
     player "{i}Like someone is... watching me...{/i}"
 
-    show hallway person
+    scene hallway person at small
     with dissolve
 
     player "{i}...{/i}"
 
     player "{i}...Huh?{/i}"
+
+    scene hallway night at small
+    with dissolve
 
     show anon
     with dissolve
@@ -319,8 +310,10 @@ label start:
         "How do I get away"
 
         "Run":
+            pause(0.5)
 
         "Quietly leave":
+            pause(0.5)
 
     player "{i}But as soon as I turn around-{/i}"
 
@@ -330,9 +323,9 @@ label start:
 
     player "{i}...{/i}"
 
-    play audio alarm
+    play audio "alarm.ogg"
 
-    show bedroom
+    scene bedroom at large
     with dissolve
 
     player "Gah!"
