@@ -23,6 +23,8 @@ define studentA = Character("Student A")
 
 define studentB = Character("Student B")
 
+define anon = Character("???")
+
 
 
 transform large: 
@@ -98,7 +100,7 @@ label start:
     scene school at large
     with dissolve
 
-    player "{i}Insert school name High… it’s your perfectly average Japanese high school. Almost too average. {/i}"
+    player "{i}Insert school name High... it’s your perfectly average Japanese high school. Almost too average. {/i}"
     
     player "{i}I’ve been here for a while, and nothing exciting has ever happened. Every day has consisted of waking up, going to school, going home, and going to bed. It’s like a damn time loop!{/i}"
             
@@ -129,7 +131,7 @@ label start:
 
     tadashi "You're cutting it pretty close. Sleep in again?"
 
-    player "Yeah yeah, cut me some slack. I was up all night studying for today’s test…"
+    player "Yeah yeah, cut me some slack. I was up all night studying for today’s test..."
 
     show tadashi worry
     with dissolve
@@ -140,7 +142,7 @@ label start:
 
     player "{i}Like i said... an idiot"
 
-    player "Alright, we got a few minutes before class… I’ll help you cram-study."
+    player "Alright, we got a few minutes before class... I’ll help you cram-study."
 
     show tadashi smile
     with dissolve
@@ -155,7 +157,7 @@ label start:
     show hallway
     with dissolve
 
-    player "{i}That test was a lot easier than I thought. Maybe studying with Tadashi helped me out a bit too…{/i}"
+    player "{i}That test was a lot easier than I thought. Maybe studying with Tadashi helped me out a bit too...{/i}"
 
     player "Anyway, I need to head to my next class-"
 
@@ -170,15 +172,15 @@ label start:
 
     player "Oh... Yuka."
 
-    player "{i}Crap… of course I end up bumping into the most beautiful girl at our school!{/i}"
+    player "{i}Crap... of course I end up bumping into the most beautiful girl at our school!{/i}"
 
-    player "{i}If her armada of fans were here… they’d jump me for potentially hurting their muse…{/i}"
+    player "{i}If her armada of fans were here... they’d jump me for potentially hurting their muse...{/i}"
 
-    player "{i}But I can’t blame them, she really is pretty…{/i}"
+    player "{i}But I can’t blame them, she really is pretty...{/i}"
 
     yuka "[playerName]?"
 
-    player "Oh! Sorry- yeah I’m- I’m fine…"
+    player "Oh! Sorry- yeah I’m- I’m fine..."
 
     show yuka happy
     with dissolve
@@ -193,7 +195,7 @@ label start:
 
     player "Oh really? I had no idea."
 
-    yuka "Yup. I was actually hoping you’d help me study today after school… at my place."
+    yuka "Yup. I was actually hoping you’d help me study today after school... at my place."
 
     yuka "..."
 
@@ -203,9 +205,9 @@ label start:
 
     player "{i}Does she really need help studying?{/i}"
 
-    player "{i}Or…{/i}"
+    player "{i}Or...{/i}"
 
-    player "{i}Is she… flirting with me?!{/i}"
+    player "{i}Is she... flirting with me?!{/i}"
 
     menu:
         "What should I do?"
@@ -213,7 +215,7 @@ label start:
         "Accept Yuka's invite":
             $ acceptedInvite = True
 
-            player "Sure! Though I don’t know how much help I’ll be…"
+            player "Sure! Though I don’t know how much help I’ll be..."
 
             yuka "Thank you, [playerName]! Then I’ll be waiting for you at the gate after school."
 
@@ -222,7 +224,7 @@ label start:
 
             player "{i}Alright [playerName], calm down. You’re just helping her study. That’s it. Nothing more.{/i}"
 
-            player "{i}…Right?{/i}"
+            player "{i}...Right?{/i}"
 
             player "{i}Whatever, I can worry about that later. I have to get to class.{/i}"
 
@@ -237,7 +239,7 @@ label start:
             show yuka worry
             with dissolve
 
-            yuka "Oh… I see. I’m sorry for asking."
+            yuka "Oh... I see. I’m sorry for asking."
 
             player "No it’s-"
 
@@ -256,13 +258,13 @@ label start:
     show classroom
     with dissolve
 
-    teacher "And for today’s cleaning duty we’ll have Mikoto and… [playerName]"
+    teacher "And for today’s cleaning duty we’ll have Mikoto and... [playerName]"
 
     studentA "Uh oh, getting paired up with Mikoto?"
 
     studentB "Ugh, for real, I got paired with him last time. He didn’t even show up! I had to do all the cleaning myself."
 
-    player "{i}Just my luck… looks like I’ll be staying late…{/i}"
+    player "{i}Just my luck... looks like I’ll be staying late...{/i}"
 
     if(acceptedInvite):
         player"{i}Hopefully I can still make it in time to study with Yuka{/i}"
@@ -270,7 +272,101 @@ label start:
     show black
     with fade
 
+    # sounds needed here
     
+    show classroom
+    with dissolve
+
+    player "{i}He really didn’t show up. I had to do the cleaning all by myself.{/i}"
+    
+    player "{i}Gah... my arms hurt...{/i}"
+
+    player "{i}Oh well, I should pack up and get out of here.{/i}"
+
+    # needs more sounds :D
+
+    show black
+    with fade
+
+    show hallway
+    with dissolve
+
+    player "{i}I never realized how creepy school can be when it’s late. I can practically hear my own heartbeat.{/i}"
+
+    player "{i}Anyway, why do I feel so uneasy?{/i}"
+
+    player "{i}Like someone is... watching me...{/i}"
+
+    show hallway person
+    with dissolve
+
+    player "{i}...{/i}"
+
+    player "{i}...Huh?{/i}"
+
+    show anon
+    with dissolve
+
+    anon "{color=#f00}...{/color}"
+
+    player "{i}Who is that?{/i}"
+
+    player "{i}Whoever they are, I don’t have a good feeling about this.{/i}"
+
+    player "{i}I should get out of here.{/i}"
+
+    menu:
+        "How do I get away"
+
+        "Run":
+
+        "Quietly leave":
+
+    player "{i}But as soon as I turn around-{/i}"
+
+    # killing audio here
+
+    show black
+
+    player "{i}...{/i}"
+
+    play audio alarm
+
+    show bedroom
+    with dissolve
+
+    player "Gah!"
+
+    mom "[playerName]? Are you up?"
+
+    player "Uh... yeah! Sorry mom!"
+
+    player "{i}What... was that?{/i}"
+
+    player "{i}A dream?{/i}"
+
+    mom "Well come down and eat your breakfast! You need a full stomach for that test today!"
+
+    player "Okay, sure-"
+    
+    player "{i}Wait. Test?{/i}"
+
+    player "{i}I took the test yesterday, didn’t I?{/i}"
+
+    player "{i}Let’s see... I have to have my calendar somewhere.{/i}"
+
+    # bed sounds
+
+    player "{i}Yesterday was Monday, the 12th, so today should be...{/i}"
+
+    #figure out how to do screenshake
+
+    player "{i}Monday the 12th?!{/i}"
+
+    # creepy music
+
+    show black
+    with fade
 
     # This ends the game.
 
