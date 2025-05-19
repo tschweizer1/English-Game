@@ -100,9 +100,16 @@ label start:
     scene black
     with fade
 
-    play audio "Morning.ogg"
+    play audio "sheets.mp3"
 
-    pause(12)
+    pause (4)
+
+    play audio "Toast.ogg"
+    pause (3)
+
+    play audio "Door.ogg"
+
+    pause(2)
     
     scene school at large
     with dissolve
@@ -164,7 +171,9 @@ label start:
 
     player "Anyway, I need to head to my next class-"
 
-    play audio "bump.mp3"
+    play audio "Bump.mp3"
+
+    pause(1.5)
 
     player "Oof!"
 
@@ -354,19 +363,25 @@ label start:
 
     player "{i}Let’s see... I have to have my calendar somewhere.{/i}"
 
-    # bed sounds
+    play audio "sheets.mp3"
+
+    pause(3)
 
     player "{i}Yesterday was Monday, the 12th, so today should be...{/i}"
 
-    #figure out how to do screenshake
-
     player "{i}Monday the 12th?!{/i}"
-
-    # creepy music
 
     show black
     with fade
 
-    # This ends the game.
+    scene bg room
+
+    show eileen happy
+
+    e "Thank you for playing our demo [playerName]!"
+
+    e "Stay tuned for updates. Until then, see ya!"
+
+    # This ends the game. 
 
     return
