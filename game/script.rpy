@@ -56,7 +56,7 @@ label start:
 
     # These display lines of dialogue.
 
-    e "Welcome to Insert Game Name"
+    e "Welcome to Time Loop Academy"
 
     e "Before we begin, we’d like to give a quick warning regarding the context of this game – if you are uncomfortable with themes of murder, do not continue this game!"
 
@@ -114,7 +114,7 @@ label start:
     scene school at large
     with dissolve
 
-    player "{i}Insert school name High... it’s your perfectly average Japanese high school. Almost too average. {/i}"
+    player "{i}Jikan High... it’s your perfectly average Japanese high school. Almost too average. {/i}"
     
     player "{i}I’ve been here for a while, and nothing exciting has ever happened. Every day has consisted of waking up, going to school, going home, and going to bed. It’s like a damn time loop!{/i}"
             
